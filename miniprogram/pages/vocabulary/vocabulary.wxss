@@ -1,0 +1,128 @@
+.container {
+  padding: 20rpx;
+}
+
+.level-selector {
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+}
+
+.level-item {
+  padding: 10rpx 30rpx;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.level-item.active {
+  background: #1296db;
+  color: #fff;
+}
+
+.word-list {
+  padding: 0 10rpx;
+}
+
+.word-item {
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.1);
+}
+
+.word-main {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.kanji {
+  font-size: 36rpx;
+  margin-right: 20rpx;
+}
+
+.kana {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.word-sub {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.learning-mode {
+  padding: 40rpx 0;
+}
+
+.card {
+  position: relative;
+  width: 600rpx;
+  height: 400rpx;
+  margin: 0 auto;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.15);
+  padding: 40rpx;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.control-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 40rpx;
+  gap: 20rpx;
+}
+
+.btn {
+  padding: 10rpx 30rpx;
+  font-size: 28rpx;
+  border-radius: 30rpx;
+  background: #1296db;
+  color: #fff;
+  border: none;
+}
+
+.mode-switch {
+  position: fixed;
+  bottom: 40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mode-btn {
+  background: #1296db;
+  color: #fff;
+  border-radius: 40rpx;
+  padding: 20rpx 60rpx;
+  font-size: 32rpx;
+}

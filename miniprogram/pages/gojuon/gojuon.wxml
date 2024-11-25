@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="tab-header">
+    <view class="tab-item {{currentTab === 'hiragana' ? 'active' : ''}}" bindtap="switchTab" data-tab="hiragana">
+      平假名
+    </view>
+    <view class="tab-item {{currentTab === 'katakana' ? 'active' : ''}}" bindtap="switchTab" data-tab="katakana">
+      片假名
+    </view>
+  </view>
+
+  <view class="gojuon-table">
+    <view class="row" wx:for="{{currentData}}" wx:key="index">
+      <view class="cell {{item.sound ? 'has-sound' : 'empty'}}" 
+            wx:for="{{item.chars}}" 
+            wx:for-item="char" 
+            wx:key="index"
+            bindtap="{{char.sound ? 'playSound' : ''}}"
+            data-sound="{{char.sound}}">
+        <text class="character">{{char.char || ''}}</text>
+        <text class="romaji">{{char.romaji || ''}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="stroke-order" wx:if="{{showStroke}}">
+    <text class="title">笔顺演示</text>
+    <canvas canvas-id="strokeCanvas" class="stroke-canvas"></canvas>
+  </view>
+</view>

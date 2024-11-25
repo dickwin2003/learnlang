@@ -1,0 +1,65 @@
+<view class="container">
+  <view class="search-bar">
+    <input type="text" placeholder="搜索语法点" bindinput="onSearch"/>
+  </view>
+
+  <view class="category-list">
+    <view class="category-item {{currentCategory === '基础句式' ? 'active' : ''}}" 
+          bindtap="switchCategory" 
+          data-category="基础句式">基础句式</view>
+    <view class="category-item {{currentCategory === '助词用法' ? 'active' : ''}}" 
+          bindtap="switchCategory" 
+          data-category="助词用法">助词用法</view>
+    <view class="category-item {{currentCategory === '时态变化' ? 'active' : ''}}" 
+          bindtap="switchCategory" 
+          data-category="时态变化">时态变化</view>
+    <view class="category-item {{currentCategory === '敬语' ? 'active' : ''}}" 
+          bindtap="switchCategory" 
+          data-category="敬语">敬语</view>
+  </view>
+
+  <view class="grammar-list">
+    <view class="grammar-item" wx:for="{{grammarList}}" wx:key="id" bindtap="showDetail" data-grammar="{{item}}">
+      <view class="grammar-header">
+        <text class="pattern">{{item.pattern}}</text>
+        <text class="level">{{item.level}}</text>
+      </view>
+      <view class="grammar-preview">
+        <text>{{item.meaning}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="grammar-detail" wx:if="{{showDetail}}">
+    <view class="detail-header">
+      <text class="pattern">{{currentGrammar.pattern}}</text>
+      <text class="level">{{currentGrammar.level}}</text>
+    </view>
+    <view class="detail-content">
+      <view class="section">
+        <text class="section-title">含义</text>
+        <text class="section-content">{{currentGrammar.meaning}}</text>
+      </view>
+      <view class="section">
+        <text class="section-title">用法说明</text>
+        <text class="section-content">{{currentGrammar.usage}}</text>
+      </view>
+      <view class="section">
+        <text class="section-title">例句</text>
+        <view class="example-item" wx:for="{{currentGrammar.examples}}" wx:key="index">
+          <text class="japanese">{{item.japanese}}</text>
+          <text class="chinese">{{item.chinese}}</text>
+        </view>
+      </view>
+      <view class="section">
+        <text class="section-title">相关语法</text>
+        <view class="related-item" wx:for="{{currentGrammar.related}}" wx:key="index" bindtap="showRelated" data-pattern="{{item}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+    <view class="detail-footer">
+      <button class="close-btn" bindtap="closeDetail">关闭</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="header">
+    <view class="date">{{todayDate}}</view>
+    <view class="stats">
+      <view class="stat-item">
+        <text class="stat-value">{{todayStats.newWords}}</text>
+        <text class="stat-label">新单词</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-value">{{todayStats.reviewWords}}</text>
+        <text class="stat-label">复习单词</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-value">{{todayStats.grammar}}</text>
+        <text class="stat-label">语法点</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="study-section">
+    <view class="section-header">
+      <text class="section-title">今日学习计划</text>
+      <text class="view-all" bindtap="viewAllPlans">查看全部</text>
+    </view>
+    
+    <view class="plan-list">
+      <view class="plan-item {{item.completed ? 'completed' : ''}}" 
+            wx:for="{{todayPlans}}" 
+            wx:key="id">
+        <view class="plan-info">
+          <text class="plan-name">{{item.name}}</text>
+          <text class="plan-desc">{{item.description}}</text>
+        </view>
+        <view class="plan-status">
+          <text class="status-text">{{item.completed ? '已完成' : '待学习'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-section">
+    <button class="start-btn" bindtap="startLearning">开始学习</button>
+  </view>
+</view>

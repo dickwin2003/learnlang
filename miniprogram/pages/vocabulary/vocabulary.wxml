@@ -1,0 +1,56 @@
+<view class="container">
+  <view class="level-selector">
+    <view class="level-item {{currentLevel === 'N5' ? 'active' : ''}}" 
+          bindtap="switchLevel" 
+          data-level="N5">N5</view>
+    <view class="level-item {{currentLevel === 'N4' ? 'active' : ''}}" 
+          bindtap="switchLevel" 
+          data-level="N4">N4</view>
+    <view class="level-item {{currentLevel === 'N3' ? 'active' : ''}}" 
+          bindtap="switchLevel" 
+          data-level="N3">N3</view>
+    <view class="level-item {{currentLevel === 'N2' ? 'active' : ''}}" 
+          bindtap="switchLevel" 
+          data-level="N2">N2</view>
+    <view class="level-item {{currentLevel === 'N1' ? 'active' : ''}}" 
+          bindtap="switchLevel" 
+          data-level="N1">N1</view>
+  </view>
+
+  <view class="word-list" wx:if="{{!isLearningMode}}">
+    <view class="word-item" wx:for="{{wordList}}" wx:key="id" bindtap="showWordDetail" data-word="{{item}}">
+      <view class="word-main">
+        <text class="kanji">{{item.kanji}}</text>
+        <text class="kana">{{item.kana}}</text>
+      </view>
+      <view class="word-sub">
+        <text class="meaning">{{item.meaning}}</text>
+        <text class="type">{{item.type}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="learning-mode" wx:else>
+    <view class="card {{isFlipped ? 'flipped' : ''}}">
+      <view class="card-front">
+        <text class="kanji">{{currentWord.kanji}}</text>
+        <text class="kana">{{currentWord.kana}}</text>
+      </view>
+      <view class="card-back">
+        <text class="meaning">{{currentWord.meaning}}</text>
+        <text class="example">{{currentWord.example}}</text>
+      </view>
+    </view>
+    <view class="control-buttons">
+      <button class="btn" bindtap="flipCard">翻转</button>
+      <button class="btn" bindtap="nextWord">下一个</button>
+      <button class="btn" bindtap="addToFavorite">收藏</button>
+    </view>
+  </view>
+
+  <view class="mode-switch">
+    <button class="mode-btn" bindtap="toggleMode">
+      {{isLearningMode ? '返回列表' : '开始学习'}}
+    </button>
+  </view>
+</view>

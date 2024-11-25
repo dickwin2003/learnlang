@@ -1,0 +1,81 @@
+<view class="container">
+  <view class="user-info">
+    <view class="avatar-wrapper" bindtap="onTapAvatar">
+      <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"></image>
+    </view>
+    <text class="nickname">{{userInfo.nickName || '未登录'}}</text>
+    <button class="login-btn" wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">
+      点击登录
+    </button>
+  </view>
+
+  <view class="study-stats">
+    <view class="stats-item">
+      <text class="stats-value">{{studyDays}}</text>
+      <text class="stats-label">学习天数</text>
+    </view>
+    <view class="stats-item">
+      <text class="stats-value">{{wordsLearned}}</text>
+      <text class="stats-label">已学单词</text>
+    </view>
+    <view class="stats-item">
+      <text class="stats-value">{{grammarLearned}}</text>
+      <text class="stats-label">已学语法</text>
+    </view>
+  </view>
+
+  <view class="menu-list">
+    <view class="menu-item" bindtap="navigateToFavorites">
+      <image class="menu-icon" src="/images/favorites.png"></image>
+      <text class="menu-text">我的收藏</text>
+      <text class="menu-arrow">></text>
+    </view>
+    
+    <view class="menu-item" bindtap="navigateToHistory">
+      <image class="menu-icon" src="/images/history.png"></image>
+      <text class="menu-text">学习记录</text>
+      <text class="menu-arrow">></text>
+    </view>
+
+    <view class="menu-item" bindtap="navigateToSettings">
+      <image class="menu-icon" src="/images/settings.png"></image>
+      <text class="menu-text">设置</text>
+      <text class="menu-arrow">></text>
+    </view>
+  </view>
+
+  <view class="study-progress">
+    <view class="progress-header">
+      <text class="progress-title">学习进度</text>
+    </view>
+    
+    <view class="progress-item">
+      <view class="progress-info">
+        <text class="progress-name">五十音图</text>
+        <text class="progress-value">{{progress.gojuon}}%</text>
+      </view>
+      <progress percent="{{progress.gojuon}}" stroke-width="3" color="#1296db"/>
+    </view>
+
+    <view class="progress-item">
+      <view class="progress-info">
+        <text class="progress-name">N5单词</text>
+        <text class="progress-value">{{progress.n5}}%</text>
+      </view>
+      <progress percent="{{progress.n5}}" stroke-width="3" color="#1296db"/>
+    </view>
+
+    <view class="progress-item">
+      <view class="progress-info">
+        <text class="progress-name">基础语法</text>
+        <text class="progress-value">{{progress.grammar}}%</text>
+      </view>
+      <progress percent="{{progress.grammar}}" stroke-width="3" color="#1296db"/>
+    </view>
+  </view>
+
+  <view class="about-section">
+    <text class="version">版本 1.0.0</text>
+    <text class="copyright">© 2024 日语学习</text>
+  </view>
+</view>

@@ -1,0 +1,158 @@
+.container {
+  padding: 20rpx;
+}
+
+.search-bar {
+  padding: 20rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.search-bar input {
+  width: 100%;
+  height: 60rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  border: 1px solid #eee;
+  border-radius: 30rpx;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  padding: 20rpx 0;
+}
+
+.category-item {
+  padding: 10rpx 30rpx;
+  background: #f5f5f5;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.category-item.active {
+  background: #1296db;
+  color: #fff;
+}
+
+.grammar-list {
+  margin-top: 20rpx;
+}
+
+.grammar-item {
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 6rpx rgba(0,0,0,0.1);
+}
+
+.grammar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.pattern {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.level {
+  font-size: 24rpx;
+  color: #1296db;
+  padding: 4rpx 12rpx;
+  border: 1px solid #1296db;
+  border-radius: 20rpx;
+}
+
+.grammar-preview {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.grammar-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 100;
+  padding: 40rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 30rpx;
+}
+
+.section {
+  margin-bottom: 30rpx;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.section-content {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+.example-item {
+  margin-bottom: 20rpx;
+}
+
+.japanese {
+  font-size: 28rpx;
+  margin-bottom: 6rpx;
+  display: block;
+}
+
+.chinese {
+  font-size: 26rpx;
+  color: #666;
+  display: block;
+}
+
+.related-item {
+  display: inline-block;
+  padding: 6rpx 20rpx;
+  background: #f5f5f5;
+  border-radius: 20rpx;
+  font-size: 26rpx;
+  color: #666;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.detail-footer {
+  margin-top: 40rpx;
+  text-align: center;
+}
+
+.close-btn {
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #1296db;
+  color: #fff;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+}
